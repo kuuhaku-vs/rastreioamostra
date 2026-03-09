@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-      <link rel="icon" type="image/svg+xml"
-href="data:image/svg+xml;charset=UTF-8,
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
-  <rect width='0' height='0' rx='20' fill='%23'/>
-  <text x='50%' y='80%' text-anchor='middle' font-size='80'>📦</text>
-</svg>">
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Rastreamento de Amostras</title>
@@ -54,39 +47,40 @@ href="data:image/svg+xml;charset=UTF-8,
     <!-- ================= LOGIN ================= -->
 
     
-    <section id="loginVendedor" class="box-busca">
-      <header class="topo">
-        <img id="logoMarca" src="/Imagens/Logo - Grupo 4k - Branco.png" class="logo" alt="Logo da empresa" />
-      </header>
-      <h3 style="text-align:center;color:white;">Login do Vendedor</h3>
-      
-      <input
-        id="codigoVendedor"
-        type="text"
-        placeholder="Digite o código do vendedor"
-        autocomplete="off"
-      />
-      <button id="btnLoginVendedor">Entrar</button>
+   <section id="loginVendedor" class="box-busca">
+  <header class="topo">
+    <img id="logoMarca" src="Logo - Grupo 4k - Branco.png" class="logo" alt="Logo da empresa" />
+  </header>
 
-      <div id="erroLogin" style="color:#ffeb3b;text-align:center;font-size:13px;"></div>
-    </section>
+  <h3 style="text-align:center;color:white;">Login do Vendedor</h3>
 
-    <div class="ajuda-wrapper">
-  <abbr title="Ajuda">
-  <button id="btnAjudaSuporte" class="btn-ajuda"> 
-  <img src="/Imagens/iconesuporte.png" alt="Ajuda e Suporte" class="icone-suporte" />
-  </abbr>
+ <form id="formLogin">
 
+<input
+id="usuarioLogin"
+type="text"
+placeholder="Usuário Protheus"
+required
+>
+
+<input
+id="senhaLogin"
+type="password"
+placeholder="Senha"
+required
+>
+
+<button type="submit">
+Entrar
 </button>
-<div id="overlayNotificacoes">
-  <div class="painel-notificacoes">
-    <div id="btnfecharpainel"><button onclick="fecharNotificacoes()">Fechar</button>
-    <div id="listaNotificacoes" class="lista-notificacoes">
-      <!-- itens gerados pelo JS -->
-       </div>
-    </div>
-  </div>
+
+</form>
+
 </div>
+
+  <div id="erroLogin" style="color:#ffeb3b;text-align:center;font-size:13px;"></div>
+</section>
+
 
 </div>
     <!-- ================= SISTEMA ================= -->
@@ -172,8 +166,10 @@ href="data:image/svg+xml;charset=UTF-8,
 
   <!-- ================= SCRIPTS ================= -->
   <script src="https://unpkg.com/papaparse@5.4.1/papaparse.min.js"></script>
-  <script src="logica.js"></script>
+  <script src="logica.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 
+  <div id="alertaTela" class="alerta-tela oculto"></div>
 </body>
 </html>
 
