@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Análises</title>
+    <link rel="stylesheet" href="analises.css" />
+</head>
+
+<body class="tema-quatrok">
+
+    <!-- MODAL DETALHES -->
+    <div id="modalDetalhes" class="modal">
+        <div class="modal-content">
+
+            <span class="close" onclick="fecharModal()">✕</span>
+
+            <h2>Detalhes da Nota</h2>
+
+            <!-- GRID 2 COLUNAS -->
+            <div class="detalhes-grid">
+
+                <div class="campo">
+                    <span class="label">Nota Fiscal</span>
+                    <span id="detNota"></span>
+                </div>
+
+                <div class="campo">
+                    <span class="label">Pedido</span>
+                    <span id="detPedido"></span>
+                </div>
+
+                <div class="campo">
+                    <span class="label">Cliente</span>
+                    <span id="detCliente"></span>
+                </div>
+
+                <div class="campo">
+                    <span class="label">Representante</span>
+                    <span id="detRepresentante"></span>
+                </div>
+
+                <div class="campo">
+                    <span class="label">Cidade - UF</span>
+                    <span id="detLocalizacao"></span>
+                </div>
+
+                <div class="campo">
+                    <span class="label">Situação</span>
+                    <span id="detSituacao"></span>
+                </div>
+
+                <div class="campo">
+                    <span class="label">Postagem</span>
+                    <span id="detPostagem"></span>
+                </div>
+
+                <div class="campo">
+                    <span class="label">Prazo</span>
+                    <span id="detPrazo"></span>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <h3>Amostras Enviadas</h3>
+            <ul id="detAmostras"></ul>
+
+        </div>
+    </div>
+
+    <!-- TOPO -->
+    <header class="topo-analises">
+        <div class="logo-area">
+            <img src="4k BRANCO.png" alt="Logo 4K">
+            <h1 class="titulo-sistema">Análises de Envio</h1>
+        </div>
+
+        <div class="filtros-data">
+            <label>
+                Filtrar p/ Data
+                <input type="date" id="dataInicio" onchange="filtrarPorData()">
+            </label>
+
+            <label>
+                Até
+                <input type="date" id="dataFim" onchange="filtrarPorData()">
+            </label>
+        </div>
+    </header>
+
+    <!-- CONTAINER PRINCIPAL -->
+    <div class="layout-principal">
+
+        <main class="conteudo-central">
+
+            <!-- CARDS KPI -->
+            <section class="resumo-cards2">
+                <div class="card2">
+                    <span>Total Rastreios</span>
+                    <h2 id="totalRastreios">0</h2>
+                </div>
+
+                <div class="card2">
+                    <span>Total R$</span>
+                    <h2 id="totalValor">R$ 0,00</h2>
+                </div>
+            </section>
+
+            <!-- CARD DA TABELA -->
+            <section class="card-container-tabela">
+                <table class="tabela-analises">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Rastreio</th>
+                            <th>Cliente</th>
+                            <th>Representante</th>
+                            <th>Vendedor</th>
+                            <th>Valor</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="listaAnalises">
+                        <!-- linhas via JS -->
+                    </tbody>
+                </table>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="https://unpkg.com/papaparse@5.4.1/papaparse.min.js"></script>
+    <script src="analises.js"></script>
+
+</body>
+</html>
